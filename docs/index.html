@@ -36,6 +36,9 @@
                     <li><a href="#start-project">Iniciar proyecto</a></li>
                     <li><a href="#install-packages">Instalación de paquetes</a></li>
                     <li><a href="#update-packages">Actualización de paquetes</a></li>
+                    <li><a href="#uninstall-packages">Desinstalación de paquetes</a></li>
+                    <li><a href="#configure-packages">Configuración de Paquetes</a></li>
+                    <li><a href="#search-packages">Búsqueda de Paquetes</a></li>
                     <li><a href="#"></a></li>
                 </ul>
             </div>
@@ -115,32 +118,102 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col md-12 col-sm-12">
+                            <p>Existen dos tipos de dependencias:</p>
                             <ul>
                                 <li>
-                                    <p><strong>"dependencies"</strong>: these packages are required by your application in production</p>
+                                    <p><strong>"dependencies"</strong>: Estos paquetes son requeridos por la aplicación para producción:</p>
                                     <ul>
                                         <li><code>npm install &lt;package_name&gt; --save</code></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <p><strong>"devDependencies"</strong>: these packages are only needed for development and testing</p>
+                                    <p><strong>"devDependencies"</strong>: Estos paquetes son requeridos sólo para desarrollo y pruebas:</p>
                                     <ul>
                                         <li><code>npm install &lt;package_name&gt; --save-dev</code></li>
                                     </ul>
                                 </li>
                             </ul>
                             <p>Se generará el directorio <strong>node_modules</strong></p>
+                            <p>Instalación global de paquetes:</p>
+                            <code>npm install -g &lt;package_name&gt;</code>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="panel panel-default" id="update-packages">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><a href="" target="_blank" title="Actualización de paquetes">Actualización de paquetes</a></h3>
+                    <h3 class="panel-title"><a href="https://docs.npmjs.com/getting-started/updating-local-packages" target="_blank" title="Actualización de paquetes">Actualización de paquetes</a></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col md-12 col-sm-12">
+                            <p>Actualizar paquetes locales:</p>
+                            <ul>
+                                <li><code>npm update</code></li>
+                            </ul>
+                            <p>Obtener paquetes desactualizados:</p>
+                            <ul>
+                                <li><code>npm outdated</code></li>
+                            </ul>
+                            <pre>Package   Current  Wanted  Latest  Location
+eslint     3.19.0  3.19.0   4.1.1  package_name
+jest       19.0.2  19.0.2  20.0.4  package_name
+jest-cli   19.0.2  19.0.2  20.0.4  package_name</pre>
+                            <p>Actualizar paquete instalado globalmente:</p>
+                            <ul>
+                                <li><code>npm update -g &lt;package_name&gt;</code></li>
+                            </ul>
+                            <p>Obtener paquetes desactualizados globalmente:</p>
+                            <ul>
+                                <li><code>npm outdated -g --depth=0</code></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" id="uninstall-packages">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="https://docs.npmjs.com/getting-started/uninstalling-local-packages" target="_blank" title="Desinstalación de paquetes">Desinstalación de paquetes</a></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col md-12 col-sm-12">
+                            <p>Desinstalar paquete para producción:</p>
+                            <ul>
+                                <li><code>npm uninstall --save &lt;package_name&gt;</code></li>
+                            </ul>
+                            <p>Desinstalar paquete para desarrollo y pruebas:</p>
+                            <ul>
+                                <li><code>npm uninstall --save-dev &lt;package_name&gt;</code></li>
+                            </ul>
+                            <p>Desinstalar paquete global:</p>
+                            <ul>
+                                <li><code>npm uninstall -g &lt;package_name&gt;</code></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" id="configure-packages">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="" target="_blank" title="Configuración de Paquetes">Configuración de Paquetes</a></h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col md-12 col-sm-12"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" id="search-packages">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="https://docs.npmjs.com/cli/search" target="_blank" title="Búsqueda de Paquetes">Búsqueda de Paquetes</a></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col md-12 col-sm-12">
+                            <p>Buscar paquetes:</p>
+                            <code>npm search &lt;package_name&gt;</code>
+                        </div>
                     </div>
                 </div>
             </div>
