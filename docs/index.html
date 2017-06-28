@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>NodeJS - NPM</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>
+            code {
+                white-space: pre-wrap;       /* css-3 */
+                white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+                white-space: -pre-wrap;      /* Opera 4-6 */
+                white-space: -o-pre-wrap;    /* Opera 7 */
+                word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            }
+            img.github-ribbon {
+                position: absolute;
+                top: 0;
+                right: 0;
+                border: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="https://github.com/lenin-anzen/javascript-design-patterns" target="_blank" title="Fork me on GitHub">
+            <img class="github-ribbon" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png">
+        </a>
+        <div class="container">
+            <div class="jumbotron">
+                <h1>NodeJS - NPM</h1>
+                <h3>Node Package Manager</h3>
+                <p></p>
+                <ul>
+                    <li><a href="#install-update">Instalación / Actualización</a></li>
+                    <li><a href="#start-project">Iniciar proyecto</a></li>
+                    <li><a href="#install-packages">Instalación de paquetes</a></li>
+                    <li><a href="#update-packages">Actualización de paquetes</a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+            <div class="panel panel-default" id="install-update">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" title="Instalación / Actualización">Instalación / Actualización</a></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col md-12 col-sm-12">
+                            <p>NPM viene incluido dentro de la instalación de NodeJs.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col md-6 col-sm-6">
+                            <p>Obtener versión:</p>
+                        </div>
+                        <div class="col md-6 col-sm-6">
+                            <code>npm -v</code>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col md-6 col-sm-6">
+                            <p>Actualizar</p>
+                        </div>
+                        <div class="col md-6 col-sm-6">
+                            <code>npm install npm@latest -g</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" id="start-project">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="" title="Iniciar proyecto">Iniciar proyecto</a></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col md-12 col-sm-12">
+                            <p>En cualquer directorio, inicializar proyecto mediante:</p>
+                            <code>npm init --yes</code><br><br>
+                            <p>Se generará el archivo <strong>package.json</strong> con el siguiente contenido:</p>
+                            <ul>
+                                <li><p><i>Se toma la información del directorio actual.</i></p></li>
+                                <li><p><i>Si se tiene un README.md se tomará la descripción de ahí.</i></p></li>
+                            </ul>
+                            <pre>{
+  "name": "nodejs-npm",
+  "version": "1.0.0",
+  "description": "Node Package Manager explanation",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lenin-anzen/nodejs-npm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lenin-anzen/nodejs-npm/issues"
+  },
+  "homepage": "https://github.com/lenin-anzen/nodejs-npm#readme"
+}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" id="install-packages">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="" target="_blank" title="Instalación de paquetes">Instalación de paquetes</a></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col md-12 col-sm-12">
+                            <ul>
+                                <li>
+                                    <p><strong>"dependencies"</strong>: these packages are required by your application in production</p>
+                                    <ul>
+                                        <li><code>npm install &lt;package_name&gt; --save</code></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <p><strong>"devDependencies"</strong>: these packages are only needed for development and testing</p>
+                                    <ul>
+                                        <li><code>npm install &lt;package_name&gt; --save-dev</code></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p>Se generará el directorio <strong>node_modules</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" id="update-packages">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="" target="_blank" title="Actualización de paquetes">Actualización de paquetes</a></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col md-12 col-sm-12"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" id="">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="" target="_blank" title=""></a></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col md-12 col-sm-12"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
