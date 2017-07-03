@@ -33,13 +33,13 @@
                 <p></p>
                 <ul>
                     <li><a href="#install-update">Instalación / Actualización</a></li>
+                    <li><a href="#package">package.json</a></li>
                     <li><a href="#start-project">Iniciar proyecto</a></li>
+                    <li><a href="#search-packages">Búsqueda de Paquetes</a></li>
                     <li><a href="#install-packages">Instalación de paquetes</a></li>
                     <li><a href="#update-packages">Actualización de paquetes</a></li>
                     <li><a href="#uninstall-packages">Desinstalación de paquetes</a></li>
                     <li><a href="#configure-packages">Configuración de Paquetes</a></li>
-                    <li><a href="#search-packages">Búsqueda de Paquetes</a></li>
-                    <li><a href="#"></a></li>
                 </ul>
             </div>
             <div class="panel panel-default" id="install-update">
@@ -53,8 +53,70 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col md-12 col-sm-12">
+                            <p>Para instalar NodeJS se puede descargar del sitio web.</p>
+                            <ul>
+                              <li><a href="https://nodejs.org/en/download/" target="_blank">NodeJS Download</a></li>
+                            </ul>
+                            <p>Se puede instalar desde el administrador de paquetes del sistema operativo:</p>
+                            <div class="table-responsive">
+                              <table class="table table-bordered table-hover table-condensed">
+                                <thead>
+                                  <tr>
+                                    <th>CentOS</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td><code>curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+sudo yum install -y nodejs</code></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <table class="table table-bordered table-hover table-condensed">
+                                <thead>
+                                  <tr>
+                                    <th>Ubuntu</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td><code>curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash
+sudo apt-get install -y nodejs</code></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <table class="table table-bordered table-hover table-condensed">
+                                <thead>
+                                  <tr>
+                                    <th>MAC OS X</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td><code>brew install node</code></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <p>Se puede instalar con <a href="https://github.com/creationix/nvm#install-script" target="_blank">NVM(Node Version Manager)</a></p>
+                            <code>curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+nvm install node
+nvm use node</code>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
                         <div class="col md-6 col-sm-6">
-                            <p>Obtener versión:</p>
+                            <p>Obtener versión de NodeJS:</p>
+                        </div>
+                        <div class="col md-6 col-sm-6">
+                            <code>node -v</code>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col md-6 col-sm-6">
+                            <p>Obtener versión de NPM:</p>
                         </div>
                         <div class="col md-6 col-sm-6">
                             <code>npm -v</code>
@@ -67,6 +129,16 @@
                         <div class="col md-6 col-sm-6">
                             <code>npm install npm@latest -g</code>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" id="package">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="" target="_blank" title=""></a></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col md-12 col-sm-12"></div>
                     </div>
                 </div>
             </div>
@@ -111,6 +183,28 @@
                     </div>
                 </div>
             </div>
+            <div class="panel panel-default" id="search-packages">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="https://docs.npmjs.com/cli/search" target="_blank" title="Búsqueda de Paquetes">Búsqueda de Paquetes</a></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col md-12 col-sm-12">
+                            <p>Buscar paquetes:</p>
+                            <code>npm search &lt;package_name&gt;</code>
+                            <hr>
+                            <p>Buscar la última versión de un paquete:</p>
+                            <code>npm view &lt;package_name&gt; version</code>
+                            <hr>
+                            <p>Buscar todas las versiones de un paquete:</p>
+                            <code>npm view &lt;package_name&gt; versions</code><br>
+                            <code>npm show &lt;package_name&gt; versions</code><br>
+                            <code>npm info &lt;package_name&gt; versions</code><br>
+                            <code>npm v &lt;package_name&gt; versions</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="panel panel-default" id="install-packages">
                 <div class="panel-heading">
                     <h3 class="panel-title"><a href="" target="_blank" title="Instalación de paquetes">Instalación de paquetes</a></h3>
@@ -118,7 +212,10 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col md-12 col-sm-12">
-                            <p>Existen dos tipos de dependencias:</p>
+                            <p>Para descargar un paquete al directorio <strong>node_modules</strong> dentro del directorio actual:</p>
+                            <code>npm install &lt;package_name&gt;</code>
+                            <hr>
+                            <p>Existen dos tipos de dependencias en el archivo <strong>package.json</strong>:</p>
                             <ul>
                                 <li>
                                     <p><strong>"dependencies"</strong>: Estos paquetes son requeridos por la aplicación para producción:</p>
@@ -129,13 +226,29 @@
                                 <li>
                                     <p><strong>"devDependencies"</strong>: Estos paquetes son requeridos sólo para desarrollo y pruebas:</p>
                                     <ul>
+                                        <li><code>npm install &lt;package_name&gt; -D</code></li>
                                         <li><code>npm install &lt;package_name&gt; --save-dev</code></li>
                                     </ul>
                                 </li>
                             </ul>
                             <p>Se generará el directorio <strong>node_modules</strong></p>
+                            <p>Se acualizará el archivo <strong>package.json</strong> con el paquete y su última versión.</p>
                             <p>Instalación global de paquetes:</p>
                             <code>npm install -g &lt;package_name&gt;</code>
+                            <hr>
+                            <p>Instalación de una versión específica:</p>
+                            <code>npm install --save &lt;package_name&gt;@&lt;version&gt;</code><br>
+                            <code>npm install --save eslint@4.1.1</code>
+                            <hr>
+                            <p>Instalación de un rango de versiones:</p>
+                            <code>npm install --save &lt;package_name&gt;@&lt;version range&gt;</code><br>
+                            <code>npm install --save eslint@&gt;=0.1.0 <0.2.0&lt;</code>
+                            <hr>
+                            <p>Instalación de los paquetes que se encuentran en el archivo <strong>package.json</strong>:</p>
+                            <code>npm install</code>
+                            <hr>
+                            <p>Instalación desde un repositorio del <strong>GIT</strong>:</p>
+                            <code>npm install git+https://lenin-anzen@github.com/eslint/eslint.git</code>
                         </div>
                     </div>
                 </div>
@@ -197,29 +310,6 @@ jest-cli   19.0.2  19.0.2  20.0.4  package_name</pre>
             <div class="panel panel-default" id="configure-packages">
                 <div class="panel-heading">
                     <h3 class="panel-title"><a href="" target="_blank" title="Configuración de Paquetes">Configuración de Paquetes</a></h3>
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col md-12 col-sm-12"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default" id="search-packages">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><a href="https://docs.npmjs.com/cli/search" target="_blank" title="Búsqueda de Paquetes">Búsqueda de Paquetes</a></h3>
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col md-12 col-sm-12">
-                            <p>Buscar paquetes:</p>
-                            <code>npm search &lt;package_name&gt;</code>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default" id="">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><a href="" target="_blank" title=""></a></h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
