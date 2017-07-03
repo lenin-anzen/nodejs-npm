@@ -338,11 +338,21 @@ jest-cli   19.0.2  19.0.2  20.0.4  package_name</pre>
             </div>
             <div class="panel panel-default" id="configure-packages">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><a href="" target="_blank" title="Configuración de Paquetes">Configuración de Paquetes</a></h3>
+                    <h3 class="panel-title"><a href="https://docs.npmjs.com/getting-started/semantic-versioning" target="_blank" title="Configuración de Paquetes">Configuración de Paquetes</a></h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col md-12 col-sm-12"></div>
+                        <div class="col md-12 col-sm-12">
+                          <p>Se pueden especificar reglas para obtener ciertas versiones de los paquetes cuando actualizemos con:</p>
+                          <code>npm update</code>
+                          <hr>
+                          <p>Suponiendo que el paquete instalado tiene la versión 1.0.4, en nuestro archivo <strong>package.json</strong> debemos especificar la versión a la cuál quereemos actualizar.</p>
+                          <ul>
+                            <li>Versiones de parches: <code>1.0</code> or <code>1.0.x</code> or <code>~1.0.4</code></li>
+                            <li>Lanzamientos menores: <code>1</code> or <code>1.x</code> or <code>^1.0.4</code></li>
+                            <li>Lanzamientos principales: <code>*</code> or <code>x</code></li>
+                          </ul>
+                        </div>
                     </div>
                 </div>
             </div>
