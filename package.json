@@ -1,7 +1,7 @@
 {
   "name": "nodejs-npm",
   "version": "1.0.0",
-  "description": "[![Build Status][travis-image]][travis-url]",
+  "description": "How the node package manager works",
   "main": "index.js",
   "directories": {
     "doc": "docs"
