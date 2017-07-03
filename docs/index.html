@@ -139,7 +139,7 @@ nvm use node</code>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col md-12 col-sm-12">
-                          <p>El archivo <strong>package.json</strong> sirve para guardar información del proyecto, dicha información es:</p>
+                          <p>El archivo <strong>package.json</strong> sirve para guardar información del proyecto así como las dependencias que se deben instalar para su buen funcionamiento, dicha información es:</p>
                         </div>
                     </div>
                     <div class="row">
@@ -348,10 +348,28 @@ jest-cli   19.0.2  19.0.2  20.0.4  package_name</pre>
                           <hr>
                           <p>Suponiendo que el paquete instalado tiene la versión 1.0.4, en nuestro archivo <strong>package.json</strong> debemos especificar la versión a la cuál quereemos actualizar.</p>
                           <ul>
-                            <li>Versiones de parches: <code>1.0</code> or <code>1.0.x</code> or <code>~1.0.4</code></li>
-                            <li>Lanzamientos menores: <code>1</code> or <code>1.x</code> or <code>^1.0.4</code></li>
-                            <li>Lanzamientos principales: <code>*</code> or <code>x</code></li>
+                            <li>Versiones de parches / Aproximadamente equivalente a la versión: <code>1.0</code> or <code>1.0.x</code> or <code>~1.0.4</code></li>
+                            <li>Lanzamientos menores / Compatible con la versión: <code>1</code> or <code>1.x</code> or <code>^1.0.4</code></li>
+                            <li>Lanzamientos principales / Cualquier versión: <code>*</code> or <code>x</code></li>
                           </ul>
+                          <hr>
+                          <p>Un ejemplo de las versiones de dependencias es:</p>
+                          <pre>{ "dependencies" :
+  { "foo" : "1.0.0 - 2.9999.9999"
+  , "bar" : "&gt;=1.0.2 &lt;2.1.2"
+  , "baz" : "&gt;1.0.2 &lt;=2.3.4"
+  , "boo" : "2.0.1"
+  , "qux" : "&lt;1.0.0 || &gt;=2.3.1 &lt;2.4.5 || &gt;=2.5.2 &lt;3.0.0"
+  , "asd" : "http://asdf.com/asdf.tar.gz"
+  , "til" : "~1.2"
+  , "elf" : "~1.2.3"
+  , "two" : "2.x"
+  , "thr" : "3.3.x"
+  , "lat" : "latest"
+  , "dyl" : "file:../dyl"
+  }
+}
+</pre>
                         </div>
                     </div>
                 </div>
