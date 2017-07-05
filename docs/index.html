@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>NodeJS - NPM</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
             code {
                 white-space: pre-wrap;       /* css-3 */
@@ -20,6 +21,10 @@
                 right: 0;
                 border: 0;
             }
+            a[target="_blank"]:after {
+                font-family: 'FontAwesome';
+                content: " \f08e";
+            }
         </style>
     </head>
     <body>
@@ -30,7 +35,7 @@
             <div class="jumbotron">
                 <h1>NodeJS - NPM</h1>
                 <h3>Node Package Manager</h3>
-                <p></p>
+                <p>El administrador de paquetes de NodeJS nos permite agregar dependencias a nuestros proyectos.</p>
                 <ul>
                     <li><a href="#install-update">Instalación / Actualización</a></li>
                     <li><a href="#package">package.json</a></li>
@@ -40,6 +45,8 @@
                     <li><a href="#update-packages">Actualización de paquetes</a></li>
                     <li><a href="#uninstall-packages">Desinstalación de paquetes</a></li>
                     <li><a href="#configure-packages">Configuración de Paquetes</a></li>
+                    <li><a href="#publish-packages">Publicación de Paquetes</a></li>
+                    <li><a href="#update-published-packages">Actualizar paquetes publicados</a></li>
                 </ul>
             </div>
             <div class="panel panel-default" id="install-update">
@@ -158,6 +165,7 @@ nvm use node</code>
                             <li><p><strong>devDependencies:</strong> object</p></li>
                             <li><p><strong>scripts:</strong> object</p></li>
                             <li><p><strong>keywords:</strong> array</p></li>
+                            <li><p><strong>private:</strong> boolean</p></li>
                           </ul>
                         </div>
                         <div class="col md-4 col-sm-4">
@@ -167,6 +175,11 @@ nvm use node</code>
                             <li><p><strong>repository:</strong> object</p></li>
                             <li><p><strong>bugs:</strong> object</p></li>
                           </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col md-12 col-sm-12">
+                          <p>El archivo <strong>.npmignore</strong> junto al <strong>.gitignore</strong> sirve para ignorar archivos.</p>
                         </div>
                     </div>
                 </div>
@@ -370,6 +383,86 @@ jest-cli   19.0.2  19.0.2  20.0.4  package_name</pre>
   }
 }
 </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" id="publish-packages">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="https://docs.npmjs.com/getting-started/publishing-npm-packages" target="_blank" title="Publicación de Paquetes">Publicación de Paquetes</a></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col md-12 col-sm-12">
+                          <p>Se debe tener como mínimo un package.json generado con el comando:</p>
+                          <code>npm init --yes</code>
+                          <hr>
+                          <h4>Crear/Configurar usuario</h4>
+                          <p>Para crear un usuario se puede realizar de dos formas:</p>
+                          <ol>
+                            <li>
+                                <p>Mediante el comando:</p>
+                                <code>npm adduser</code>
+                            </li>
+                            <li>
+                                <p>Crear una cuenta en el sitio web <a href="https://www.npmjs.com/signup" target="_blank">https://www.npmjs.com/signup</a>.</p>
+                                <ul>
+                                    <li>
+                                        <p>Posteriormente ingresar con el comando:</p>
+                                        <code>npm login</code>
+                                    </li>
+                                </ul>
+                            </li>
+                          </ol>
+                          <pre>Username: lenin-anzen
+Password:
+Email: (this IS public) lmeza@anzen.com.mx
+Logged in as lenin-anzen on https://registry.npmjs.org/.</pre>
+                          <p>Publicar el paquete mediante el comando:</p>
+                          <code>npm publish</code>
+                          <pre>> my-package@0.0.1 prepublish ~\my-package
+> nsp check
+
+(+) No known vulnerabilities found
++ my-package6@0.0.1</pre>
+                            <p>El paquete estará disponible en la página del usuario que lo registró <a href="https://www.npmjs.com/~" target="_blank">https://www.npmjs.com/~</a></p>
+                            <ul>
+                                <li><p>Ejemplo: <a href="https://www.npmjs.com/package/generator-anzdig-aw-es6" target="_target">https://www.npmjs.com/package/generator-anzdig-aw-es6</a></p></li>
+                            </ul>
+                            <p>Se debe especificar que el repositorio no es privado mediante la propiedad:</p>
+                            <pre>"private": false</pre>
+                            <p>De otro modo mostrará el siguiente error:</p>
+                            <pre>npm ERR! This package has been marked as private
+npm ERR! Remove the 'private' field from the package.json to publish it.</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" id="update-published-packages">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="https://docs.npmjs.com/getting-started/publishing-npm-packages#updating-the-package" target="_blank" title="Actualizar paquetes publicados">Actualizar paquetes publicados</a></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col md-12 col-sm-12">
+                          <p>Para actualizar un paquete se deben tomar en cuenta los siguientes tipos de actualizaciones:</p>
+                          <ol>
+                            <li><p><strong>patch</strong>: v0.0.2</p></li>
+                            <li><p><strong>minor</strong>: v0.1.0</p></li>
+                            <li><p><strong>major</strong>: v1.0.0</p></li>
+                          </ol>
+                          <p>Mediante el siguiente comando se actualizará la versión del archivo package.json</p>
+                          <code>npm version &lt;tipo de actualización&gt;</code>
+                          <hr>
+                          <p>Si se tiene un repositorio de Git se agregará un tag con el número de release.</p>
+                          <pre>commit c38a46ee01ff91536cc9ce7591221da0c16c4c7b (HEAD -&gt; master, tag: v0.0.3)
+Author: Lenin Meza &lt;lmeza@anzen.com.mx&gt;
+Date:   Wed Jul 5 17:04:01 2017 -0500
+
+    0.0.3</pre>
+                          <hr>
+                          <p>Después de actualizar la versión, publicar el repositorio de nuevo:</p>
+                          <code>npm publish</code>
                         </div>
                     </div>
                 </div>
