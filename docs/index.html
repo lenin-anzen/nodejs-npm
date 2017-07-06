@@ -455,7 +455,7 @@ npm ERR! Remove the 'private' field from the package.json to publish it.</pre>
                             <li><p><strong>major</strong>: v1.0.0</p></li>
                           </ol>
                           <p>Mediante el siguiente comando se actualizará la versión del archivo package.json</p>
-                          <code>npm version &lt;tipo de actualización&gt;</code>
+                          <code>npm version &lt;tipo de actualización&gt; -m "Added Webpack to the %s version"</code>
                           <hr>
                           <p>Si se tiene un repositorio de Git se agregará un tag con el número de release.</p>
                           <pre>commit c38a46ee01ff91536cc9ce7591221da0c16c4c7b (HEAD -&gt; master, tag: v0.0.3)
@@ -463,6 +463,13 @@ Author: Lenin Meza &lt;lmeza@anzen.com.mx&gt;
 Date:   Wed Jul 5 17:04:01 2017 -0500
 
     0.0.3</pre>
+                          <hr>
+                          <p>Se pueden agregar scripts para ejecutarse junto a la <i>version</i>:</p>
+                          <pre>"scripts": {
+  "preversion": "npm test",
+  "version": "npm run build && git add -A dist",
+  "postversion": "git push && git push --tags && rm -rf build/temp"
+}</pre>
                           <hr>
                           <p>Después de actualizar la versión, publicar el repositorio de nuevo:</p>
                           <code>npm publish</code>
