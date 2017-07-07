@@ -164,20 +164,30 @@ nvm use node</code>
                         </div>
                         <div class="col md-4 col-sm-4">
                           <ul>
-                            <li><p><strong>dependencies:</strong> object</p></li>
-                            <li><p><strong>devDependencies:</strong> object</p></li>
+                            <li><p><strong><a href="https://docs.npmjs.com/files/package.json#dependencies" target="_blank">dependencies</a>:</strong> object</p></li>
+                            <li><p><strong><a href="https://docs.npmjs.com/files/package.json#devdependencies" target="_blank">devDependencies</a>:</strong> object</p></li>
                             <li><p><strong>scripts:</strong> object</p></li>
                             <li><p><strong>keywords:</strong> array</p></li>
-                            <li><p><strong>private:</strong> boolean</p></li>
+                            <li><p><strong><a href="https://docs.npmjs.com/files/package.json#private" target="_blank">private</a>:</strong> boolean</p></li>
                           </ul>
                         </div>
                         <div class="col md-4 col-sm-4">
                           <ul>
-                            <li><p><strong>main:</strong> string</p></li>
-                            <li><p><strong>directories:</strong> directories</p></li>
-                            <li><p><strong>repository:</strong> object</p></li>
-                            <li><p><strong>bugs:</strong> object</p></li>
+                            <li><p><strong><a href="https://docs.npmjs.com/files/package.json#main" target="_blank">main</a>:</strong> string</p></li>
+                            <li><p><strong><a href="https://docs.npmjs.com/files/package.json#directories" target="_blank">directories</a>:</strong> directories</p></li>
+                            <li><p><strong><a href="https://docs.npmjs.com/files/package.json#repository" target="_blank">repository</a>:</strong> object</p></li>
+                            <li><p><strong><a href="https://docs.npmjs.com/files/package.json#bugs" target="_blank">bugs</a>:</strong> object</p></li>
                           </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col md-4 col-sm-4">
+                          <ul>
+                            <li><p><strong><a href="https://docs.npmjs.com/files/package.json#files" target="_blank">files</a>:</strong> array</p></li>
+                          </ul>
+                        </div>
+                        <div class="col md-8 col-sm-8">
+                          <p>Sirve para indicar que archivos se van a incluir dentro del paquete enviado a NPM.</p>
                         </div>
                     </div>
                     <div class="row">
@@ -448,6 +458,11 @@ npm ERR! Remove the 'private' field from the package.json to publish it.</pre>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col md-12 col-sm-12">
+                          <p>No deben existir archivos sin commit, para comprobar el estado del repositorio:</p>
+                          <pre>git status</pre>
+                          <p>En dado caso de que se muestre algún archivo, hacerle commit:</p>
+                          <pre>git add .
+git commit -m "El archivo ha cambiado por que..."</pre>
                           <p>Para actualizar un paquete se deben tomar en cuenta los siguientes tipos de actualizaciones:</p>
                           <ol>
                             <li><p><strong>patch</strong>: v0.0.2</p></li>
@@ -455,9 +470,9 @@ npm ERR! Remove the 'private' field from the package.json to publish it.</pre>
                             <li><p><strong>major</strong>: v1.0.0</p></li>
                           </ol>
                           <p>Mediante el siguiente comando se actualizará la versión del archivo package.json</p>
-                          <code>npm version &lt;tipo de actualización&gt; -m "Added Webpack to the %s version"</code>
+                          <pre>npm version &lt;tipo de actualización&gt; -m "Added Webpack to the %s version"</pre>
                           <hr>
-                          <p>Si se tiene un repositorio de Git se agregará un tag con el número de release.</p>
+                          <p>Al repositorio de Git se agregará un tag con el número de release.</p>
                           <pre>commit c38a46ee01ff91536cc9ce7591221da0c16c4c7b (HEAD -&gt; master, tag: v0.0.3)
 Author: Lenin Meza &lt;lmeza@anzen.com.mx&gt;
 Date:   Wed Jul 5 17:04:01 2017 -0500
@@ -472,7 +487,9 @@ Date:   Wed Jul 5 17:04:01 2017 -0500
 }</pre>
                           <hr>
                           <p>Después de actualizar la versión, publicar el repositorio de nuevo:</p>
-                          <code>npm publish</code>
+                          <pre>npm publish</pre>
+                          <p>También se debe hacer push a los commits de GIT:</p>
+                          <pre>git push</pre>
                         </div>
                     </div>
                 </div>
