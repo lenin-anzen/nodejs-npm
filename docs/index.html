@@ -270,7 +270,7 @@ nvm use node</code>
                             <p>Para descargar un paquete al directorio <strong>node_modules</strong> dentro del directorio actual:</p>
                             <code>npm install &lt;package_name&gt;</code>
                             <hr>
-                            <p>Existen dos tipos de dependencias en el archivo <strong>package.json</strong>:</p>
+                            <p>Existen diferentes tipos de dependencias en el archivo <strong>package.json</strong>:</p>
                             <ul>
                                 <li>
                                     <p><strong>"dependencies"</strong>: Estos paquetes son requeridos por la aplicación para producción:</p>
@@ -283,6 +283,24 @@ nvm use node</code>
                                     <ul>
                                         <li><code>npm install &lt;package_name&gt; -D</code></li>
                                         <li><code>npm install &lt;package_name&gt; --save-dev</code></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <p><strong>"peerDependencies"</strong>: :</p>
+                                    <ul>
+                                        <li><code></code></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <p><strong>"bundledDependencies"</strong>: :</p>
+                                    <ul>
+                                        <li><code></code></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <p><strong>"optionalDependencies"</strong>: :</p>
+                                    <ul>
+                                        <li><code></code></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -304,6 +322,10 @@ nvm use node</code>
                             <hr>
                             <p>Instalación desde un repositorio del <strong>GIT</strong>:</p>
                             <code>npm install git+https://lenin-anzen@github.com/eslint/eslint.git</code>
+                            <hr>
+                            <p>Se pueden instalar paquetes desde la cache usando las opciones:</p>
+                            <code>--offline</code>
+                            <code>--prefer-offline</code>
                         </div>
                     </div>
                 </div>

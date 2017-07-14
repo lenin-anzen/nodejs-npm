@@ -1,4 +1,4 @@
-# nodejs-npm
+# NodeJS - NPM
 [![Build Status][travis-image]][travis-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
 
@@ -9,7 +9,6 @@
 ## License
 
 MIT © [Lenin Meza](https://travis-ci.org/lenin-anzen)
-
 
 [travis-image]: https://travis-ci.org/lenin-anzen/nodejs-npm.svg?branch=master
 [travis-url]: https://travis-ci.org/lenin-anzen/nodejs-npm

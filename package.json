@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/lenin-anzen/nodejs-npm.git"
   },
-  "keywords": [],
+  "keywords": ["nodejs", "npm"],
   "author": "",
   "license": "ISC",
   "bugs": {
